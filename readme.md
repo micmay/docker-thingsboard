@@ -6,7 +6,7 @@ docker-compose
 ## Usage
 
 ```bash
-git clone https://github.com/micmay/docker-thingsboard.git
+git clone git@github.com:micmay/docker-thingsboard.git
 cd docker-thingsboard
 ./mima run
 ```
