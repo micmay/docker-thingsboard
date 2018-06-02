@@ -4,7 +4,7 @@
 
 
 function relUp {
-  cp env-default .env
+  cp -f env-default .env
   sed -i "s#CASSANDRA_DATA_DIR_VAR#${PWD}/data/cassandra#" .env
   sed -i "s#POSTGRES_DATA_DIR_VAR#${PWD}/data/cassandra#" .env
   sed -i "s#HSQLDB_DATA_DIR_VAR#${PWD}/data/hsqldb#" .env
