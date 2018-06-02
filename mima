@@ -1,0 +1,32 @@
+#!/bin/bash -e
+
+
+
+
+function relUp {
+  docker-compose up -d tb
+}
+
+function stop {
+  docker-compose stop
+}
+
+function down {
+  docker-compose down -v
+}
+
+case "$1" in
+# Start development 
+run)
+  relUp $2
+  ;;  
+stop)
+  stop
+  ;;
+down)
+  down
+  ;;
+*)
+  echo "usage: mima run|stop|down|backup|web"
+  ;;
+esac
