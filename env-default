@@ -9,5 +9,5 @@ POSTGRES_DB=thingsboard
 HSQLDB_DATA_DIR=HSQLDB_DATA_DIR_VAR
 
 # environment variables for schema init and insert system and demo data
-ADD_SCHEMA_AND_SYSTEM_DATA=false
-ADD_DEMO_DATA=false
+ADD_SCHEMA_AND_SYSTEM_DATA=true
+ADD_DEMO_DATA=true
