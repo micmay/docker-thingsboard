@@ -6,9 +6,9 @@
 function relUp {
   cp -f env-default .env
   sed -i "s#CASSANDRA_DATA_DIR_VAR#${PWD}/data/cassandra#" .env
-  sed -i "s#POSTGRES_DATA_DIR_VAR#${PWD}/data/cassandra#" .env
+  sed -i "s#POSTGRES_DATA_DIR_VAR#${PWD}/data/postgresql#" .env
   sed -i "s#HSQLDB_DATA_DIR_VAR#${PWD}/data/hsqldb#" .env
-  docker-compose up -d tb
+  docker-compose up -d 
 }
 
 function stop {
@@ -20,7 +20,10 @@ function down {
 }
 
 case "$1" in
-# Start development 
+init)
+  export ADD_SCHEMA_AND_SYSTEM_DATA=true
+  docker-compose up -d tb
+  ;;
 run)
   relUp $2
   ;;  
